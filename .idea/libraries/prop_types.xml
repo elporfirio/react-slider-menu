@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="prop-types" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="Prototype" />
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/prop-types" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/prop-types" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

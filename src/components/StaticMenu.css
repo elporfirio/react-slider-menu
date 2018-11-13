@@ -1,0 +1,58 @@
+.static-menu {
+  background: rgba(0, 0, 0, 0.2);
+  height: 40px;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.static-menu__item {
+  position: relative;
+  padding: 0;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.static-menu__item:hover .link::after, .static-menu__item:hover .static-menu__item--active::after, .static-menu__item:hover .link::before, .static-menu__item:hover .static-menu__item--active::before {
+  width: 50%;
+}
+.static-menu__item .link, .static-menu__item .static-menu__item--active {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 10px 10px;
+}
+.static-menu__item .link::after, .static-menu__item .static-menu__item--active::after, .static-menu__item .link::before, .static-menu__item .static-menu__item--active::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 300ms ease-in-out;
+  bottom: 8px;
+  margin: 0 6px;
+}
+.static-menu__item .link::before, .static-menu__item .static-menu__item--active::before {
+  left: 0;
+}
+.static-menu__item .link::after, .static-menu__item .static-menu__item--active::after {
+  right: 0;
+}
+.static-menu__item--active::before, .static-menu__item--active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #000;
+  bottom: 8px;
+  margin: 0 6px;
+}
+.static-menu__item--active::before {
+  left: 0;
+}
+.static-menu__item--active::after {
+  right: 0;
+}
+
+/*# sourceMappingURL=StaticMenu.css.map */
