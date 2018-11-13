@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import StaticMenu from "./components/StaticMenu";
+import withSlider from "./components/withSlider";
 
 const nodes = [
   {
@@ -112,10 +113,12 @@ const nodes = [
     active: false
   }
 ];
+const ref = React.createRef();
 
 class App extends Component {
   state = {
-    data: nodes
+    data: nodes,
+    translate: 0
   };
 
   setActive = (event, id) => {
@@ -133,10 +136,49 @@ class App extends Component {
     });
   };
 
+  slideLeft = () => {
+    const translateDistance = 40;
+    this.setState(
+      current => {
+        return { ...this.state, translate: current.translate - translateDistance };
+      },
+      () => {
+        console.log(ref);
+        console.log(this.state);
+      }
+    );
+  };
+
+  slideRight = () => {
+    const translateDistance = 40;
+    this.setState(
+      current => {
+        if((current.translate + translateDistance) > 0) {
+          return { ...this.state, translate: 0 };
+        }
+        return { ...this.state, translate: current.translate + translateDistance };
+      },
+      () => {
+        console.log(ref);
+        console.log(this.state);
+      }
+    );
+  };
+
   render() {
+    const SimpleHOC = withSlider(StaticMenu);
     return (
       <div className="App">
         <StaticMenu items={this.state.data} onClickHandler={this.setActive} />
+        <hr />
+        <SimpleHOC
+          items={this.state.data}
+          onClickHandler={this.setActive}
+          slideLeft={this.slideLeft}
+          slideRight={this.slideRight}
+          translate={this.state.translate}
+          needRef={ref}
+        />
       </div>
     );
   }

@@ -1,7 +1,6 @@
 .static-menu {
   background: rgba(0, 0, 0, 0.2);
   height: 40px;
-  overflow-x: hidden;
   white-space: nowrap;
 }
 .static-menu__item {

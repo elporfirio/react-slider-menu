@@ -1,0 +1,14 @@
+.slider-container__left-button, .slider-container__right-button {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+.slider-container__visible-area {
+  float: left;
+  overflow-x: hidden;
+  width: calc(100% - 80px);
+}
+
+/*# sourceMappingURL=withSlider.css.map */

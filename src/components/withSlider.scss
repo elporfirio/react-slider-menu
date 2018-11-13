@@ -1,0 +1,25 @@
+$buttonWidth: 40px;
+$buttonBorder: 1px;
+$widthArea: $buttonWidth * 2;
+
+.slider-container {
+  &__left-button, &__right-button {
+    display: block;
+    float: left;
+    width: $buttonWidth;
+    height: 40px;
+    margin: 0;
+  }
+
+  &__visible-area {
+    float: left;
+    overflow-x: hidden;
+    width: calc(100% - 80px);
+  }
+
+  //&__right-button {
+  //  float: left;
+  //  width: 40px;
+  //  height: 40px;
+  //}
+}

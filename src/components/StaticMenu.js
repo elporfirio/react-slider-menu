@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 const StaticMenu = props => {
   return (
-    <div className={"static-menu"}>
+    <div className={"static-menu"} style={props.style} ref={props.needRef}>
       {props.items.map(item => {
         const itemClass = classNames("static-menu__item", {
           "static-menu__item--active": item.active
